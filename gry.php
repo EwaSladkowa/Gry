@@ -87,7 +87,7 @@
                 <button id="button">DODAJ</button>
             </form>
             <?php
-            if (isset($_POST['Nazwa'],$_POST['Opis'],$_POST['Cena'],$_POST['Zdjecie'])) {
+            if (isset($_POST['Nazwa'])) {
                 $connection = mysqli_connect(hostname: $servername, username: $username, password: $password = "", database: $dbname);
                 $nazwa = $_POST['Nazwa'];
                 $opis = $_POST['Opis'];
@@ -96,6 +96,8 @@
                 $query4 = "INSERT INTO `gry`(`nazwa`, `opis`, `punkty`, `cena`, `zdjecie`) VALUES ('{$nazwa}','{$opis}',{$cena},0,'{$zdjecie}');";
                 $result4 = mysqli_query($connection, $query4);
                 mysqli_close($connection);
+                $_POST=[];
+                header("Location: ".$_SERVER['PHP_SELF']);
             }
             ?>
         </aside>
