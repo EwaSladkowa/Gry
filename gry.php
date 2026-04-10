@@ -69,7 +69,7 @@
     </section>
     <footer>
         <form action="gry.php" method="post">
-            <input type="text" name="footOpis" id="opisFoot">
+            <input type="number" name="footOpis" id="opisFoot">
             <button id="buttonOpis">Pokaż opis</button>
 
         </form>
